@@ -1,0 +1,127 @@
+@import 'mixin';
+
+$textColor: #5b5b5b;
+
+.form-container {
+    background-color: #f1f7fe;
+    border-radius: 20px;
+    width: 100%;
+    min-width: 300px;
+    max-width: 300px;
+    height: 100%;
+    min-height: 497px;
+    max-height: 568px;
+    display: grid;
+    justify-content: center;
+    align-content: center;
+    padding: 10px;
+
+    & .logo {
+        width: calc(100% - 15px);
+        text-align: center;
+        margin-bottom: 20px;
+    }
+
+    & .login-form {
+        width: calc(100% + 10%);
+        margin-left: -5%;
+        .input-group {
+            background-color: #fff;
+            margin: 20px 0;
+            padding: 15px;
+            border-radius: 15px;
+            width: 100%;
+
+            & label {
+                color: $textColor;
+                font-weight: 600;
+                font-size: 13px;
+            }
+
+            & div {
+                margin-top: 10px;
+                @include display-flex(flex-start, center);
+
+                & .input-icon {
+                    width: 16px;
+                    margin: 0 3px 0 0;
+                    color: $textColor;
+                }
+
+                & input {
+                    border: none;
+                    outline: none;
+                    color: $textColor;
+                    font-size: 14px;
+                    &::placeholder{
+                        color: #999;
+                    }
+                }
+            }
+        }
+        & .form-submit-btn{
+            width: 100%;
+            margin-bottom: 20px;
+            & button{
+                &.success{
+                background-color: #03bd60;
+                }
+                &.failed{
+                background-color: #e42121;
+                }
+                background-color: #784ad4;
+                color: #fff;
+                width: 100%;
+                border-radius: 20px;
+                padding: 12px 15px;
+                border: none;
+                outline: none;
+                font-weight: 600;
+                cursor: pointer;
+                transition: 0.21s all ease;
+                &:hover{
+                    background-color: #6c3ad3;
+                }
+                & .login-spinner{
+                    width: 20px;
+                    height: 20px;
+                    border: 3px solid #ffffff71;
+                    border-top-color: #fff;
+                    border-radius: 100%;
+                    margin: 0 auto;
+                    animation: rotateBtnSpinner 1s linear infinite;
+                    display: none;
+                }
+                @keyframes rotateBtnSpinner {
+                    to{
+                        transform: rotate(360deg);
+                    }
+                }
+                & .login-success, & .login-failed{
+                    display: none;
+                    margin: 0 auto;
+                    width: 20px;
+
+                }
+            }
+        }
+    }
+
+    & .login-options{
+        
+        @include display-flex(space-between, center);
+        & a{
+            font-size: 12px;
+            color: #999;
+            text-decoration: none;
+            transition: 0.21s all ease;
+        &:hover{
+            text-decoration: underline;
+        }
+        }
+    }
+
+    & img {
+        width: 100px;
+    }
+}
