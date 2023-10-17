@@ -81,7 +81,7 @@ const LoginForm = () => {
                 <label htmlFor="email">Email Address</label>
                 <div>
                   <EnvelopeIcon className="input-icon" />
-                  <input type="email" id="email" value={email} onChange={(e) => setEmail(e.target.value)} placeholder="username@example.com" />
+                  <input type="email" id="email" value={email} onChange={(e) => setEmail(e.target.value)} placeholder="username@example.com" required />
                 </div>
               </div>
 
@@ -89,7 +89,7 @@ const LoginForm = () => {
                 <label htmlFor="password"> Password</label>
                 <div>
                   <LockClosedIcon className="input-icon" />
-                  <input type="password" id="password" value={password} onChange={(e) => setPassword(e.target.value)} placeholder="••••••••••••" />
+                  <input type="password" id="password" value={password} onChange={(e) => setPassword(e.target.value)} placeholder="••••••••••••" required />
                 </div>
               </div>
 
